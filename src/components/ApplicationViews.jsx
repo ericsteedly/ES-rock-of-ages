@@ -11,7 +11,12 @@ import { Register } from '../pages/Register.jsx'
 export const ApplicationViews = () => {
     const [rocksState, setRocksState] = useState([{
         id: 1,
-        name: "Sample",
+        name: "Sample Rock",
+        weight: 2.2,
+        user: {
+            first_name: "Sam",
+            last_name: "Pull"
+        },
         type: {
             id: 1,
             label: "Volcanic"
