@@ -13,9 +13,10 @@ export const RockList = ({ rocks, fetchRocks }) => {
             headers: {
                 Authorization: `Token ${JSON.parse(localStorage.getItem("rock_token")).token}`
             }
-        }).then(()=>{
+        }).then((res)=>{
+            if (res.status === 204) {
             fetchRocks(mine)
-        })
+            }})
     }
     
     useEffect(() => {
