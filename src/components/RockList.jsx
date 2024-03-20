@@ -1,11 +1,14 @@
 import { useEffect } from "react"
 import PropTypes from 'prop-types'
+import { useParams } from "react-router-dom"
 
 export const RockList = ({ rocks, fetchRocks }) => {
+
+    const { mine } = useParams()
     
     useEffect(() => {
-        fetchRocks()
-    }, [])
+        fetchRocks(mine)
+    }, [mine])
 
     const displayRocks = () => {
         if (rocks && rocks.length) {
